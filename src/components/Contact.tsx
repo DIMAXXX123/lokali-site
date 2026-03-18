@@ -5,131 +5,140 @@ import { translations } from "@/lib/i18n";
 import ScrollReveal from "./ScrollReveal";
 
 export default function Contact() {
-  const { t } = useLang();
+  const { lang, t } = useLang();
   const form = translations.contact.form;
 
   return (
-    <section id="contact" className="py-24 px-4">
-      <div className="max-w-6xl mx-auto">
+    <section id="contact" className="section-padding relative">
+      <div className="absolute inset-0 dot-grid opacity-15" />
+      <div className="relative z-10 max-w-6xl mx-auto px-6">
         <ScrollReveal>
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+            <span className="text-sm font-semibold uppercase tracking-widest text-cyan-400 mb-4 block">
+              {t({ cg: "Kontakt", en: "Contact", ru: "Контакт" })}
+            </span>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black">
               {t(translations.contact.headline)}
             </h2>
-            <p className="text-muted text-lg max-w-xl mx-auto">
+            <p className="mt-4 text-lg text-slate-400 max-w-xl mx-auto">
               {t(translations.contact.subheadline)}
             </p>
           </div>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+        <div className="grid lg:grid-cols-3 gap-8">
           {/* Form */}
-          <ScrollReveal className="lg:col-span-3">
-            <form
-              onSubmit={(e) => e.preventDefault()}
-              className="glass-card p-8 space-y-5"
-            >
-              <div>
-                <label className="block text-sm font-medium mb-2">{t(form.name)}</label>
-                <input
-                  type="text"
-                  className="w-full bg-background border border-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-accent transition-colors"
-                  placeholder={t(form.name)}
-                />
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                <div>
-                  <label className="block text-sm font-medium mb-2">{t(form.email)}</label>
-                  <input
-                    type="email"
-                    className="w-full bg-background border border-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-accent transition-colors"
-                    placeholder={t(form.email)}
-                  />
+          <ScrollReveal delay={100}>
+            <div className="lg:col-span-2 glass-card p-8 md:p-10">
+              <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
+                <div className="grid sm:grid-cols-2 gap-5">
+                  <div>
+                    <label className="block text-sm font-medium text-slate-300 mb-2">{t(form.name)}</label>
+                    <input type="text" className="input-field" placeholder={t(form.name)} />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-slate-300 mb-2">{t(form.email)}</label>
+                    <input type="email" className="input-field" placeholder="email@example.com" />
+                  </div>
+                </div>
+                <div className="grid sm:grid-cols-2 gap-5">
+                  <div>
+                    <label className="block text-sm font-medium text-slate-300 mb-2">{t(form.phone)}</label>
+                    <input type="tel" className="input-field" placeholder="+382 6X XXX XXX" />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-slate-300 mb-2">{t(form.businessType)}</label>
+                    <select className="input-field appearance-none cursor-pointer">
+                      <option value="" className="bg-[#0A0A0F]">—</option>
+                      {(form.businessOptions[lang] as readonly string[]).map((opt: string, i: number) => (
+                        <option key={i} value={opt} className="bg-[#0A0A0F]">{opt}</option>
+                      ))}
+                    </select>
+                  </div>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium mb-2">{t(form.phone)}</label>
-                  <input
-                    type="tel"
-                    className="w-full bg-background border border-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-accent transition-colors"
-                    placeholder={t(form.phone)}
-                  />
+                  <label className="block text-sm font-medium text-slate-300 mb-2">{t(form.message)}</label>
+                  <textarea className="input-field min-h-[140px] resize-none" placeholder={t(form.message)} />
                 </div>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium mb-2">{t(form.businessType)}</label>
-                <select className="w-full bg-background border border-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-accent transition-colors appearance-none">
-                  <option value="">{t(form.businessType)}</option>
-                  {t(form.businessOptions).map((opt) => (
-                    <option key={opt} value={opt}>{opt}</option>
-                  ))}
-                </select>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium mb-2">{t(form.message)}</label>
-                <textarea
-                  rows={4}
-                  className="w-full bg-background border border-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-accent transition-colors resize-none"
-                  placeholder={t(form.message)}
-                />
-              </div>
-
-              <button type="submit" className="btn-cta w-full justify-center text-base">
-                {t(form.submit)} &rarr;
-              </button>
-            </form>
+                <button type="submit" className="btn-cta w-full justify-center text-base py-4">
+                  {t(form.submit)}
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+                  </svg>
+                </button>
+              </form>
+            </div>
           </ScrollReveal>
 
-          {/* Contact info */}
-          <ScrollReveal delay={200} className="lg:col-span-2">
-            <div className="glass-card p-8 h-full flex flex-col justify-center space-y-6">
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-lg bg-accent/10 text-accent flex items-center justify-center shrink-0">
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
-                  </svg>
-                </div>
-                <div>
-                  <p className="text-sm text-muted mb-1">Email</p>
-                  <p className="font-medium">info@lokali.me</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-lg bg-accent/10 text-accent flex items-center justify-center shrink-0">
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
-                  </svg>
-                </div>
-                <div>
-                  <p className="text-sm text-muted mb-1">WhatsApp</p>
-                  <p className="font-medium">+382 XX XXX XXX</p>
+          {/* Sidebar */}
+          <ScrollReveal delay={200}>
+            <div className="space-y-6">
+              {/* Email */}
+              <div className="glass-card p-6">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-violet-600/20 to-blue-600/20 border border-violet-500/20 flex items-center justify-center text-violet-400">
+                    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                      <polyline points="22,6 12,13 2,6" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-xs text-slate-500 uppercase tracking-wider font-semibold">Email</p>
+                    <p className="text-white font-medium">info@lokali.me</p>
+                  </div>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-lg bg-accent/10 text-accent flex items-center justify-center shrink-0">
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-                  </svg>
-                </div>
-                <div>
-                  <p className="text-sm text-muted mb-1">{t({ cg: "Lokacija", en: "Location", ru: "Локация" })}</p>
-                  <p className="font-medium">{t({ cg: "Crna Gora", en: "Montenegro", ru: "Черногория" })}</p>
+              {/* Phone */}
+              <div className="glass-card p-6">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-600/20 to-blue-600/20 border border-cyan-500/20 flex items-center justify-center text-cyan-400">
+                    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-xs text-slate-500 uppercase tracking-wider font-semibold">
+                      {t({ cg: "Telefon", en: "Phone", ru: "Телефон" })}
+                    </p>
+                    <p className="text-white font-medium">+382 69 123 456</p>
+                  </div>
                 </div>
               </div>
 
-              <div className="pt-4 border-t border-border">
-                <p className="text-sm text-muted">
-                  {t({
-                    cg: "Odgovaramo u roku od 2 sata.",
-                    en: "We reply within 2 hours.",
-                    ru: "Отвечаем в течение 2 часов.",
-                  })}
-                </p>
+              {/* Instagram */}
+              <div className="glass-card p-6">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-pink-600/20 to-violet-600/20 border border-pink-500/20 flex items-center justify-center text-pink-400">
+                    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                      <rect x="2" y="2" width="20" height="20" rx="5" />
+                      <circle cx="12" cy="12" r="5" />
+                      <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-xs text-slate-500 uppercase tracking-wider font-semibold">Instagram</p>
+                    <p className="text-white font-medium">@lokali.me</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Location */}
+              <div className="glass-card p-6">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-600/20 to-cyan-600/20 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+                    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                      <circle cx="12" cy="10" r="3" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-xs text-slate-500 uppercase tracking-wider font-semibold">
+                      {t({ cg: "Lokacija", en: "Location", ru: "Локация" })}
+                    </p>
+                    <p className="text-white font-medium">Bar, Crna Gora 🇲🇪</p>
+                  </div>
+                </div>
               </div>
             </div>
           </ScrollReveal>

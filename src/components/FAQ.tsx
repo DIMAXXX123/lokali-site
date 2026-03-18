@@ -5,49 +5,61 @@ import { useLang } from "@/context/LanguageContext";
 import { translations } from "@/lib/i18n";
 import ScrollReveal from "./ScrollReveal";
 
+// Add a 6th FAQ item
+const extraFaq = {
+  question: {
+    cg: "Šta ako nisam zadovoljan rezultatima?",
+    en: "What if I'm not happy with the results?",
+    ru: "Что если меня не устроит результат?",
+  },
+  answer: {
+    cg: "Pratimo rezultate zajedno i prilagođavamo sistem dok ne budete potpuno zadovoljni. Ako i dalje ne odgovara — možete otkazati bez penala.",
+    en: "We monitor results together and adjust the system until you're fully satisfied. If it still doesn't work — you can cancel without penalties.",
+    ru: "Мы отслеживаем результаты вместе и настраиваем систему, пока вы не будете полностью довольны. Если всё равно не подходит — можете отменить без штрафов.",
+  },
+};
+
 export default function FAQ() {
   const { t } = useLang();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const items = [...translations.faq.items, extraFaq];
 
   return (
-    <section className="py-24 px-4 bg-surface/50">
-      <div className="max-w-3xl mx-auto">
+    <section className="section-padding relative">
+      <div className="max-w-3xl mx-auto px-6">
         <ScrollReveal>
-          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-16">
-            {t(translations.faq.headline)}
-          </h2>
+          <div className="text-center mb-16">
+            <span className="text-sm font-semibold uppercase tracking-widest text-violet-400 mb-4 block">FAQ</span>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black">
+              {t(translations.faq.headline)}
+            </h2>
+          </div>
         </ScrollReveal>
 
-        <div className="space-y-3">
-          {translations.faq.items.map((item, i) => (
+        <div className="space-y-4">
+          {items.map((item, i) => (
             <ScrollReveal key={i} delay={i * 80}>
               <div className="glass-card overflow-hidden">
                 <button
                   onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                  className="w-full px-6 py-5 text-left flex items-center justify-between gap-4"
+                  className="w-full px-8 py-6 flex items-center justify-between text-left group"
                 >
-                  <span className="font-medium">{t(item.question)}</span>
-                  <svg
-                    className={`w-5 h-5 text-muted shrink-0 transition-transform ${
-                      openIndex === i ? "rotate-180" : ""
+                  <span className="text-base md:text-lg font-semibold text-white pr-4 group-hover:text-violet-300 transition-colors">
+                    {t(item.question)}
+                  </span>
+                  <span
+                    className={`shrink-0 w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center transition-all duration-300 ${
+                      openIndex === i ? "rotate-45 bg-violet-600/20 border-violet-500/30" : ""
                     }`}
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                  </svg>
+                    <svg className="w-4 h-4 text-violet-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                      <path d="M12 5v14M5 12h14" />
+                    </svg>
+                  </span>
                 </button>
-                <div
-                  className={`grid transition-all duration-300 ${
-                    openIndex === i ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
-                  }`}
-                >
-                  <div className="overflow-hidden">
-                    <p className="px-6 pb-5 text-sm text-muted leading-relaxed">
-                      {t(item.answer)}
-                    </p>
+                <div className={`faq-answer ${openIndex === i ? "open" : ""}`}>
+                  <div className="px-8 pb-6">
+                    <p className="text-slate-400 leading-relaxed">{t(item.answer)}</p>
                   </div>
                 </div>
               </div>

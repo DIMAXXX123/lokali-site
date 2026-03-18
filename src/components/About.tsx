@@ -4,64 +4,102 @@ import { useLang } from "@/context/LanguageContext";
 import { translations } from "@/lib/i18n";
 import ScrollReveal from "./ScrollReveal";
 
-const reasonIcons = [
-  // Home
-  <svg key="home" className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+const whyUsIcons = [
+  <svg key="home" className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+    <polyline points="9,22 9,12 15,12 15,22" />
   </svg>,
-  // Zap
-  <svg key="zap" className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+  <svg key="zap" className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <polygon points="13,2 3,14 12,14 11,22 21,10 12,10" />
   </svg>,
-  // Coins
-  <svg key="coins" className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />
+  <svg key="coins" className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="10" />
+    <path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01" />
   </svg>,
-  // Handshake
-  <svg key="handshake" className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
+  <svg key="handshake" className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
   </svg>,
 ];
 
 export default function About() {
   const { t } = useLang();
+  const about = translations.about;
 
   return (
-    <section id="about" className="py-24 px-4 bg-surface/50">
-      <div className="max-w-5xl mx-auto">
-        {/* Main about */}
+    <section id="about" className="section-padding relative">
+      <div className="absolute inset-0 dot-grid opacity-15" />
+      <div className="relative z-10 max-w-6xl mx-auto px-6">
         <ScrollReveal>
           <div className="text-center mb-16">
-            <div className="w-24 h-24 rounded-full bg-gradient-to-br from-accent to-purple-500 mx-auto mb-8 flex items-center justify-center text-3xl font-bold">
-              T&D
-            </div>
-            <h2 className="text-3xl sm:text-4xl font-bold mb-6 max-w-2xl mx-auto">
-              {t(translations.about.headline)}
+            <span className="text-sm font-semibold uppercase tracking-widest text-cyan-400 mb-4 block">
+              {t({ cg: "O nama", en: "About us", ru: "О нас" })}
+            </span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black max-w-3xl mx-auto leading-tight">
+              {t(about.headline)}
             </h2>
-            <div className="text-muted text-base sm:text-lg leading-relaxed max-w-2xl mx-auto whitespace-pre-line">
-              {t(translations.about.text)}
-            </div>
           </div>
         </ScrollReveal>
 
-        {/* Why us */}
+        {/* Two column layout */}
+        <div className="grid md:grid-cols-2 gap-12 md:gap-16 mb-20">
+          {/* Left: Avatar / Visual */}
+          <ScrollReveal delay={100}>
+            <div className="glass-card p-10 flex flex-col items-center justify-center text-center">
+              <div className="flex gap-6 mb-8">
+                <div className="w-24 h-24 rounded-full bg-gradient-to-br from-violet-500 to-blue-500 flex items-center justify-center text-white text-2xl font-black">
+                  D
+                </div>
+                <div className="w-24 h-24 rounded-full bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center text-white text-2xl font-black">
+                  T
+                </div>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-2">Dima & Tima</h3>
+              <p className="text-slate-400">
+                {t({
+                  cg: "Bar, Crna Gora 🇲🇪",
+                  en: "Bar, Montenegro 🇲🇪",
+                  ru: "Бар, Черногория 🇲🇪",
+                })}
+              </p>
+              <div className="mt-6 flex items-center gap-2 text-sm text-violet-400">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                {t({
+                  cg: "Dostupni za nove projekte",
+                  en: "Available for new projects",
+                  ru: "Доступны для новых проектов",
+                })}
+              </div>
+            </div>
+          </ScrollReveal>
+
+          {/* Right: Text */}
+          <ScrollReveal delay={200}>
+            <div className="flex flex-col justify-center">
+              {t(about.text).split("\n\n").map((paragraph, i) => (
+                <p key={i} className="text-slate-300 leading-relaxed mb-4 last:mb-0">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          </ScrollReveal>
+        </div>
+
+        {/* Why Us */}
         <ScrollReveal>
-          <h3 className="text-2xl sm:text-3xl font-bold text-center mb-10">
-            {t(translations.about.whyUs.headline)}
+          <h3 className="text-3xl md:text-4xl font-black text-center mb-12">
+            {t(about.whyUs.headline)}
           </h3>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          {translations.about.whyUs.reasons.map((reason, i) => (
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {about.whyUs.reasons.map((reason, i) => (
             <ScrollReveal key={i} delay={i * 100}>
-              <div className="glass-card p-6 flex gap-4 transition-all duration-300">
-                <div className="w-12 h-12 rounded-xl bg-accent/10 text-accent flex items-center justify-center shrink-0">
-                  {reasonIcons[i]}
+              <div className="glass-card p-6 text-center h-full">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-violet-600/20 to-blue-600/20 border border-violet-500/20 flex items-center justify-center text-violet-400 mx-auto mb-4">
+                  {whyUsIcons[i]}
                 </div>
-                <div>
-                  <h4 className="font-semibold mb-1">{t(reason.title)}</h4>
-                  <p className="text-sm text-muted">{t(reason.description)}</p>
-                </div>
+                <h4 className="text-lg font-bold text-white mb-2">{t(reason.title)}</h4>
+                <p className="text-sm text-slate-400 leading-relaxed">{t(reason.description)}</p>
               </div>
             </ScrollReveal>
           ))}
