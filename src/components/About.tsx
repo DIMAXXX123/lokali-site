@@ -40,49 +40,16 @@ export default function About() {
           </div>
         </ScrollReveal>
 
-        {/* Two column layout */}
-        <div className="grid md:grid-cols-2 gap-12 md:gap-16 mb-20">
-          {/* Left: Avatar / Visual */}
-          <ScrollReveal delay={100}>
-            <div className="glass-card p-10 flex flex-col items-center justify-center text-center">
-              <div className="flex gap-6 mb-8">
-                <div className="w-24 h-24 rounded-full bg-gradient-to-br from-violet-500 to-blue-500 flex items-center justify-center text-white text-2xl font-black">
-                  D
-                </div>
-                <div className="w-24 h-24 rounded-full bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center text-white text-2xl font-black">
-                  T
-                </div>
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-2">Dima & Tima</h3>
-              <p className="text-slate-400">
-                {t({
-                  cg: "Bar, Crna Gora 🇲🇪",
-                  en: "Bar, Montenegro 🇲🇪",
-                  ru: "Бар, Черногория 🇲🇪",
-                })}
+        {/* About text */}
+        <ScrollReveal delay={100}>
+          <div className="max-w-3xl mx-auto mb-20">
+            {t(about.text).split("\n\n").map((paragraph, i) => (
+              <p key={i} className="text-slate-300 leading-relaxed mb-4 last:mb-0 text-lg">
+                {paragraph}
               </p>
-              <div className="mt-6 flex items-center gap-2 text-sm text-violet-400">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                {t({
-                  cg: "Dostupni za nove projekte",
-                  en: "Available for new projects",
-                  ru: "Доступны для новых проектов",
-                })}
-              </div>
-            </div>
-          </ScrollReveal>
-
-          {/* Right: Text */}
-          <ScrollReveal delay={200}>
-            <div className="flex flex-col justify-center">
-              {t(about.text).split("\n\n").map((paragraph, i) => (
-                <p key={i} className="text-slate-300 leading-relaxed mb-4 last:mb-0">
-                  {paragraph}
-                </p>
-              ))}
-            </div>
-          </ScrollReveal>
-        </div>
+            ))}
+          </div>
+        </ScrollReveal>
 
         {/* Why Us */}
         <ScrollReveal>

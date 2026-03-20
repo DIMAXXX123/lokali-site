@@ -281,7 +281,7 @@ export default function Services() {
           ))}
         </div>
 
-        {/* Comparison Table */}
+        {/* Comparison Table - Mobile Responsive */}
         <ScrollReveal delay={300}>
           <div className="max-w-4xl mx-auto">
             <h3 className="text-2xl md:text-3xl font-bold text-center mb-8">
@@ -291,7 +291,9 @@ export default function Services() {
                 ru: "Сравните пакеты",
               })}
             </h3>
-            <div className="glass-card overflow-hidden rounded-2xl">
+
+            {/* Desktop Table */}
+            <div className="hidden md:block glass-card overflow-hidden rounded-2xl">
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead>
@@ -367,6 +369,76 @@ export default function Services() {
                     </tr>
                   </tbody>
                 </table>
+              </div>
+            </div>
+
+            {/* Mobile Cards */}
+            <div className="md:hidden space-y-6">
+              {/* Starter Card */}
+              <div className="glass-card p-6">
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="text-xl">🟢</span>
+                  <h4 className="text-lg font-bold" style={{ color: "#22C55E" }}>STARTER</h4>
+                </div>
+                <div className="mb-4">
+                  <span className="text-2xl font-bold text-white">€99</span>
+                  <span className="text-sm text-slate-500 ml-1">/ {t({ cg: "jednokratno", en: "one-time", ru: "разово" })}</span>
+                </div>
+                <ul className="space-y-2">
+                  {comparisonFeatures.filter(f => f.starter).map((feat, i) => (
+                    <li key={i} className="flex items-start gap-2 text-sm">
+                      <span className="text-green-400 mt-0.5">✓</span>
+                      <span className="text-slate-300">{t(feat.label)}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Pro Card */}
+              <div className="glass-card p-6 ring-2" style={{ borderColor: "rgba(59,130,246,0.3)" }}>
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="text-xl">🔵</span>
+                  <h4 className="text-lg font-bold" style={{ color: "#3B82F6" }}>PRO</h4>
+                  <span className="ml-auto px-2 py-0.5 text-xs font-bold uppercase tracking-wider rounded bg-blue-500/20 text-blue-400">
+                    {t({ cg: "Najpopularniji", en: "Most Popular", ru: "Популярный" })}
+                  </span>
+                </div>
+                <div className="mb-4">
+                  <span className="text-2xl font-bold text-white">€249</span>
+                  <span className="text-sm text-slate-500"> + </span>
+                  <span className="text-xl font-bold text-blue-400">€79</span>
+                  <span className="text-sm text-slate-500">/{t({ cg: "mj", en: "mo", ru: "мес" })}</span>
+                </div>
+                <ul className="space-y-2">
+                  {comparisonFeatures.filter(f => f.pro).map((feat, i) => (
+                    <li key={i} className="flex items-start gap-2 text-sm">
+                      <span className="text-blue-400 mt-0.5">✓</span>
+                      <span className="text-slate-300">{t(feat.label)}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Max Card */}
+              <div className="glass-card p-6">
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="text-xl">🟡</span>
+                  <h4 className="text-lg font-bold" style={{ color: "#EAB308" }}>MAX</h4>
+                </div>
+                <div className="mb-4">
+                  <span className="text-2xl font-bold text-white">€499</span>
+                  <span className="text-sm text-slate-500"> + </span>
+                  <span className="text-xl font-bold text-yellow-400">€149</span>
+                  <span className="text-sm text-slate-500">/{t({ cg: "mj", en: "mo", ru: "мес" })}</span>
+                </div>
+                <ul className="space-y-2">
+                  {comparisonFeatures.filter(f => f.max).map((feat, i) => (
+                    <li key={i} className="flex items-start gap-2 text-sm">
+                      <span className="text-yellow-400 mt-0.5">✓</span>
+                      <span className="text-slate-300">{t(feat.label)}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>

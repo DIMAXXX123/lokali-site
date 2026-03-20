@@ -84,7 +84,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="text-xs text-slate-500 uppercase tracking-wider font-semibold">Email</p>
-                    <p className="text-white font-medium">info@lokali.me</p>
+                    <a href="mailto:ivaschdima@gmail.com" className="text-white font-medium hover:text-violet-400 transition-colors">ivaschdima@gmail.com</a>
                   </div>
                 </div>
               </div>
@@ -101,24 +101,7 @@ export default function Contact() {
                     <p className="text-xs text-slate-500 uppercase tracking-wider font-semibold">
                       {t({ cg: "Telefon", en: "Phone", ru: "Телефон" })}
                     </p>
-                    <p className="text-white font-medium">+382 69 123 456</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Instagram */}
-              <div className="glass-card p-6">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-pink-600/20 to-violet-600/20 border border-pink-500/20 flex items-center justify-center text-pink-400">
-                    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                      <rect x="2" y="2" width="20" height="20" rx="5" />
-                      <circle cx="12" cy="12" r="5" />
-                      <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="text-xs text-slate-500 uppercase tracking-wider font-semibold">Instagram</p>
-                    <p className="text-white font-medium">@lokali.me</p>
+                    <a href="tel:+38268499621" className="text-white font-medium hover:text-cyan-400 transition-colors">+382 68 499 621</a>
                   </div>
                 </div>
               </div>

@@ -329,14 +329,14 @@ export const translations = {
   },
   about: {
     headline: {
-      cg: "Mi smo Tima i Dima. Pravimo digitalnog asistenta za vaš biznis.",
-      en: "We're Tima and Dima. We build digital assistants for your business.",
-      ru: "Мы — Тима и Дима. Создаём цифровых ассистентов для вашего бизнеса.",
+      cg: "Digitalna rješenja za vaš biznis u Crnoj Gori.",
+      en: "Digital solutions for your business in Montenegro.",
+      ru: "Цифровые решения для вашего бизнеса в Черногории.",
     },
     text: {
-      cg: "Odrasli smo u Crnoj Gori. Znamo kako izgleda sezona — gužva, milion poruka, gosti koji čekaju odgovor, a vi jedva stižete. Znamo jer smo to gledali svaki dan.\n\nZato smo napravili nešto praktično: digitalne alate koji odgovaraju umjesto vas, primaju rezervacije i traže recenzije. Bez komplikacija, bez skupih sistema — samo ono što vam treba da radite manje, a zaradite više.\n\nMladi smo, ali znamo tehnologiju iznutra. I znamo crnogorski turizam iznutra. To je naša prednost.",
-      en: "We grew up in Montenegro. We know what the season looks like — the rush, a thousand messages, guests waiting for a reply while you can barely keep up. We know because we've watched it happen every day.\n\nThat's why we built something practical: digital tools that reply on your behalf, take bookings, and collect reviews. No complexity, no expensive systems — just what you need to work less and earn more.\n\nWe're young, but we know technology inside out. And we know Montenegrin hospitality inside out. That's our edge.",
-      ru: "Мы выросли в Черногории. Мы знаем, как выглядит сезон — суета, тысяча сообщений, гости ждут ответа, а вы едва успеваете. Знаем, потому что видели это каждый день.\n\nПоэтому мы создали кое-что практичное: цифровые инструменты, которые отвечают за вас, принимают бронирования и собирают отзывы. Без сложностей, без дорогих систем — только то, что нужно, чтобы работать меньше, а зарабатывать больше.\n\nМы молодые, но мы знаем технологии изнутри. И знаем черногорский туризм изнутри. Это наше преимущество.",
+      cg: "Lokali je agencija koja pomaže restoranima, hotelima i apartmanima u Crnoj Gori da automatizuju komunikaciju sa gostima. Znamo kako izgleda sezona — gužva, milion poruka, gosti koji čekaju odgovor, a vi jedva stižete.\n\nZato smo napravili nešto praktično: digitalne alate koji odgovaraju umjesto vas, primaju rezervacije i traže recenzije. Bez komplikacija, bez skupih sistema — samo ono što vam treba da radite manje, a zaradite više.\n\nPoznajemo crnogorski turizam iznutra i koristimo najnoviju tehnologiju da vam pomognemo da rastete.",
+      en: "Lokali is an agency that helps restaurants, hotels, and rentals in Montenegro automate their guest communication. We know what the season looks like — the rush, a thousand messages, guests waiting for a reply while you can barely keep up.\n\nThat's why we built something practical: digital tools that reply on your behalf, take bookings, and collect reviews. No complexity, no expensive systems — just what you need to work less and earn more.\n\nWe know Montenegrin hospitality inside out and use the latest technology to help you grow.",
+      ru: "Lokali — это агентство, которое помогает ресторанам, отелям и апартаментам в Черногории автоматизировать коммуникацию с гостями. Мы знаем, как выглядит сезон — суета, тысяча сообщений, гости ждут ответа, а вы едва успеваете.\n\nПоэтому мы создали кое-что практичное: цифровые инструменты, которые отвечают за вас, принимают бронирования и собирают отзывы. Без сложностей, без дорогих систем — только то, что нужно, чтобы работать меньше, а зарабатывать больше.\n\nМы знаем черногорский туризм изнутри и используем новейшие технологии, чтобы помочь вам расти.",
     },
     whyUs: {
       headline: { cg: "Zašto mi?", en: "Why us?", ru: "Почему мы?" },
@@ -379,39 +379,6 @@ export const translations = {
         },
       ],
     },
-  },
-  testimonials: {
-    headline: {
-      cg: "Šta kažu naši klijenti",
-      en: "What our clients say",
-      ru: "Что говорят наши клиенты",
-    },
-    items: [
-      {
-        quote: {
-          cg: "Od kad koristimo automatske odgovore, broj rezervacija nam je porastao za 35%. Gosti dobiju odgovor odmah — i to na njihovom jeziku.",
-          en: "Since we started using automated replies, our bookings went up by 35%. Guests get an answer right away — in their own language.",
-          ru: "С тех пор как мы подключили автоматические ответы, количество бронирований выросло на 35%. Гости получают ответ мгновенно — и на своём языке.",
-        },
-        author: { cg: "Marko D., Hotel & Spa, Budva", en: "Marko D., Hotel & Spa, Budva", ru: "Марко Д., Hotel & Spa, Будва" },
-      },
-      {
-        quote: {
-          cg: "Ranije sam gubio goste jer nisam stizao da odgovorim na sve poruke. Sada se sve rješava automatski, a ja se fokusiram na ono što radim najbolje.",
-          en: "I used to lose guests because I couldn't reply to every message in time. Now everything is handled automatically, and I focus on what I do best.",
-          ru: "Раньше я терял гостей, потому что не успевал отвечать на все сообщения. Теперь всё работает автоматически, а я занимаюсь тем, что умею лучше всего.",
-        },
-        author: { cg: "Ana P., Apartmani, Kotor", en: "Ana P., Apartments, Kotor", ru: "Ана П., Апартаменты, Котор" },
-      },
-      {
-        quote: {
-          cg: "Postavio sam za 3 dana i odmah vidio razliku. Preporučujem svima u turizmu.",
-          en: "Set up in 3 days, saw results immediately. I recommend it to everyone in hospitality.",
-          ru: "Настроили за 3 дня — результат увидел сразу. Рекомендую всем, кто работает в туризме.",
-        },
-        author: { cg: "Nikola S., Restoran, Tivat", en: "Nikola S., Restaurant, Tivat", ru: "Никола С., Ресторан, Тиват" },
-      },
-    ],
   },
   faq: {
     headline: { cg: "Česta pitanja", en: "Frequently asked questions", ru: "Часто задаваемые вопросы" },

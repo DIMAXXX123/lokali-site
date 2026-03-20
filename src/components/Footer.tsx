@@ -17,6 +17,17 @@ export default function Footer() {
             <span className="text-sm text-slate-500">{t(translations.footer.copy)}</span>
           </div>
 
+          {/* Contact info */}
+          <div className="flex flex-col sm:flex-row items-center gap-4 text-sm text-slate-400">
+            <a href="mailto:ivaschdima@gmail.com" className="hover:text-white transition-colors">
+              ivaschdima@gmail.com
+            </a>
+            <span className="hidden sm:inline text-slate-600">|</span>
+            <a href="tel:+38268499621" className="hover:text-white transition-colors">
+              +382 68 499 621
+            </a>
+          </div>
+
           {/* Links */}
           <div className="flex items-center gap-6 text-sm text-slate-500">
             <a href="#services" className="hover:text-white transition-colors">{t(translations.nav.services)}</a>
