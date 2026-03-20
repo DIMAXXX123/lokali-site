@@ -12,6 +12,7 @@ const langs: { code: Lang; label: string }[] = [
 ];
 
 const navLinks = [
+  { key: "portfolio" as const, href: "#portfolio" },
   { key: "services" as const, href: "#services" },
   { key: "howItWorks" as const, href: "#how-it-works" },
   { key: "about" as const, href: "#about" },

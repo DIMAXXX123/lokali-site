@@ -3,7 +3,8 @@ export type Lang = "cg" | "en" | "ru";
 export const translations = {
   nav: {
     home: { cg: "Početna", en: "Home", ru: "Главная" },
-    services: { cg: "Usluge", en: "Services", ru: "Услуги" },
+    portfolio: { cg: "Portfolio", en: "Portfolio", ru: "Портфолио" },
+    services: { cg: "Paketi", en: "Pricing", ru: "Пакеты" },
     about: { cg: "O nama", en: "About", ru: "О нас" },
     howItWorks: { cg: "Kako funkcioniše", en: "How it works", ru: "Как это работает" },
     contact: { cg: "Kontakt", en: "Contact", ru: "Контакт" },
