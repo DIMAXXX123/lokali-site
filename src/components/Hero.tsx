@@ -23,7 +23,7 @@ export default function Hero() {
         <ScrollReveal>
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span className="text-sm text-slate-400 font-medium">AI-Powered Hospitality</span>
+            <span className="text-sm text-slate-400 font-medium">Digital Solutions for Hospitality</span>
           </div>
         </ScrollReveal>
 
