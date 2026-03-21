@@ -12,7 +12,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Logo */}
           <div className="flex items-center gap-3">
-            <span className="text-xl font-black text-gradient">Lokali</span>
+            <span className="text-xl font-black text-gradient">SmartBay</span>
             <span className="text-slate-600">|</span>
             <span className="text-sm text-slate-500">{t(translations.footer.copy)}</span>
           </div>
@@ -37,7 +37,7 @@ export default function Footer() {
 
           {/* Copyright */}
           <p className="text-sm text-slate-600">
-            © {new Date().getFullYear()} Lokali
+            © {new Date().getFullYear()} SmartBay
           </p>
         </div>
       </div>

@@ -28,7 +28,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="text-2xl font-black tracking-tight">
-          <span className="text-gradient">Lokali</span>
+          <span className="text-gradient">SmartBay</span>
         </a>
 
         {/* Desktop Nav */}

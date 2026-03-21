@@ -9,7 +9,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Lokali — AI Automation for Hospitality in Montenegro",
+  title: "SmartBay — AI Automation for Hospitality in Montenegro",
   description:
     "AI-powered digital assistants for restaurants, hotels, and rentals in Montenegro. Automated bookings, guest communication, and reviews. Ready in 3–5 days.",
 };

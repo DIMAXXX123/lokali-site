@@ -334,9 +334,9 @@ export const translations = {
       ru: "Цифровые решения для вашего бизнеса в Черногории.",
     },
     text: {
-      cg: "Lokali je agencija koja pomaže restoranima, hotelima i apartmanima u Crnoj Gori da automatizuju komunikaciju sa gostima. Znamo kako izgleda sezona — gužva, milion poruka, gosti koji čekaju odgovor, a vi jedva stižete.\n\nZato smo napravili nešto praktično: digitalne alate koji odgovaraju umjesto vas, primaju rezervacije i traže recenzije. Bez komplikacija, bez skupih sistema — samo ono što vam treba da radite manje, a zaradite više.\n\nPoznajemo crnogorski turizam iznutra i koristimo najnoviju tehnologiju da vam pomognemo da rastete.",
-      en: "Lokali is an agency that helps restaurants, hotels, and rentals in Montenegro automate their guest communication. We know what the season looks like — the rush, a thousand messages, guests waiting for a reply while you can barely keep up.\n\nThat's why we built something practical: digital tools that reply on your behalf, take bookings, and collect reviews. No complexity, no expensive systems — just what you need to work less and earn more.\n\nWe know Montenegrin hospitality inside out and use the latest technology to help you grow.",
-      ru: "Lokali — это агентство, которое помогает ресторанам, отелям и апартаментам в Черногории автоматизировать коммуникацию с гостями. Мы знаем, как выглядит сезон — суета, тысяча сообщений, гости ждут ответа, а вы едва успеваете.\n\nПоэтому мы создали кое-что практичное: цифровые инструменты, которые отвечают за вас, принимают бронирования и собирают отзывы. Без сложностей, без дорогих систем — только то, что нужно, чтобы работать меньше, а зарабатывать больше.\n\nМы знаем черногорский туризм изнутри и используем новейшие технологии, чтобы помочь вам расти.",
+      cg: "SmartBay je agencija koja pomaže restoranima, hotelima i apartmanima u Crnoj Gori da automatizuju komunikaciju sa gostima. Znamo kako izgleda sezona — gužva, milion poruka, gosti koji čekaju odgovor, a vi jedva stižete.\n\nZato smo napravili nešto praktično: digitalne alate koji odgovaraju umjesto vas, primaju rezervacije i traže recenzije. Bez komplikacija, bez skupih sistema — samo ono što vam treba da radite manje, a zaradite više.\n\nPoznajemo crnogorski turizam iznutra i koristimo najnoviju tehnologiju da vam pomognemo da rastete.",
+      en: "SmartBay is an agency that helps restaurants, hotels, and rentals in Montenegro automate their guest communication. We know what the season looks like — the rush, a thousand messages, guests waiting for a reply while you can barely keep up.\n\nThat's why we built something practical: digital tools that reply on your behalf, take bookings, and collect reviews. No complexity, no expensive systems — just what you need to work less and earn more.\n\nWe know Montenegrin hospitality inside out and use the latest technology to help you grow.",
+      ru: "SmartBay — это агентство, которое помогает ресторанам, отелям и апартаментам в Черногории автоматизировать коммуникацию с гостями. Мы знаем, как выглядит сезон — суета, тысяча сообщений, гости ждут ответа, а вы едва успеваете.\n\nПоэтому мы создали кое-что практичное: цифровые инструменты, которые отвечают за вас, принимают бронирования и собирают отзывы. Без сложностей, без дорогих систем — только то, что нужно, чтобы работать меньше, а зарабатывать больше.\n\nМы знаем черногорский туризм изнутри и используем новейшие технологии, чтобы помочь вам расти.",
     },
     whyUs: {
       headline: { cg: "Zašto mi?", en: "Why us?", ru: "Почему мы?" },
@@ -485,9 +485,9 @@ export const translations = {
   },
   footer: {
     copy: {
-      cg: "Lokali. Digitalna rješenja za turizam i ugostiteljstvo u Crnoj Gori.",
-      en: "Lokali. Digital solutions for hospitality and tourism in Montenegro.",
-      ru: "Lokali. Цифровые решения для туризма и гостеприимства в Черногории.",
+      cg: "SmartBay. Digitalna rješenja za turizam i ugostiteljstvo u Crnoj Gori.",
+      en: "SmartBay. Digital solutions for hospitality and tourism in Montenegro.",
+      ru: "SmartBay. Цифровые решения для туризма и гостеприимства в Черногории.",
     },
   },
 } as const;

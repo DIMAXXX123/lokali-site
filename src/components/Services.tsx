@@ -17,8 +17,8 @@ const tiers = [
       en: "Your menu online in 24 hours",
       ru: "Твоё меню онлайн за 24 часа",
     },
-    price: "99",
-    priceType: { cg: "jednokratno", en: "one-time", ru: "разово" },
+    price: "10",
+    priceType: { cg: "mjesečno", en: "monthly", ru: "в месяц" },
     monthly: null,
     features: {
       cg: [
@@ -350,9 +350,8 @@ export default function Services() {
                         {t({ cg: "Cijena", en: "Price", ru: "Цена" })}
                       </td>
                       <td className="p-4 text-center">
-                        <span className="font-bold text-white">€99</span>
-                        <br />
-                        <span className="text-xs text-slate-500">{t({ cg: "jednokratno", en: "one-time", ru: "разово" })}</span>
+                        <span className="font-bold text-white">€10</span>
+                        <span className="text-xs text-slate-500">/{t({ cg: "mj", en: "mo", ru: "мес" })}</span>
                       </td>
                       <td className="p-4 text-center">
                         <span className="font-bold text-white">€249</span>
@@ -381,8 +380,8 @@ export default function Services() {
                   <h4 className="text-lg font-bold" style={{ color: "#22C55E" }}>STARTER</h4>
                 </div>
                 <div className="mb-4">
-                  <span className="text-2xl font-bold text-white">€99</span>
-                  <span className="text-sm text-slate-500 ml-1">/ {t({ cg: "jednokratno", en: "one-time", ru: "разово" })}</span>
+                  <span className="text-2xl font-bold text-white">€10</span>
+                  <span className="text-sm text-slate-500 ml-1">/{t({ cg: "mj", en: "mo", ru: "мес" })}</span>
                 </div>
                 <ul className="space-y-2">
                   {comparisonFeatures.filter(f => f.starter).map((feat, i) => (
